@@ -1,5 +1,6 @@
 from ultralytics import YOLO
 from ultralytics.engine.results import Results
+from torch import round as torch_round
 import cv2
 import numpy as np
 from tqdm import tqdm
@@ -40,7 +41,7 @@ def draw_boxes(frame: np.ndarray, result: Results, color=(0, 255, 0)) -> np.ndar
     # Цикл по предсказанным боксам
     for box in result.boxes:
         # Получение описания бокса
-        x1, y1, x2, y2 = map(int, np.round(box.xyxy[0]))
+        x1, y1, x2, y2 = map(int, torch_round(box.xyxy[0]))
         class_label = int(box.cls[0])
         confidence = box.conf[0]
 
