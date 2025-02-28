@@ -48,7 +48,7 @@ pip install -r requirements.txt
 python main.py -i input_file.mp4 -o output_file.mp4 -s
 ```
 
-(Для запуска на UNIX-системах `python` следует заменить на `python3`)
+(Для запуска на UNIX-подобных системах `python` следует заменить на `python3`)
 
 ## Аргументы для запуска приложения
 
